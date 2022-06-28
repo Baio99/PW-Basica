@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio Numero 1</title>
+<link href="../css/estilo.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div align="center">
+	<script>
+		do {
+			var n = window.prompt("Ingrese el tamaño de la matriz: ");
+		} while ((n%2) == 0);
+		var conta_Matriz = 1;
+		var matriz = new Array(n);
+		
+		for(var i=0; i<n; i++) {
+		   matriz[i] = new Array(n);
+		}
+		for (i=0; i<n; i++) {
+			if (i%2 == 0) { 
+				for (var j=0; j<n; j++) {
+					matriz[i][j] = conta_Matriz + " ";
+					conta_Matriz++;
+				}
+			} else { 
+				for (j=n-1; j>=0; j--) {
+					matriz[i][j] = conta_Matriz + " ";                                       
+					conta_Matriz++;
+				}
+			}
+			
+		}
+
+		for(i=0; i<n; i++) {
+			matriz[i][j] = "<br><br>";	
+		}
+		
+		document.write(matriz);
+	</script>	
+</div>
+</body>
+</html>

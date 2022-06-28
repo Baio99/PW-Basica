@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio Numero 2</title>
+<link href="../css/estilo.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div align="center">
+  <script>
+		var n = window.prompt("Ingrese el tamaño de la matriz: ");
+		var auxiliar = 0;
+		var dimen_Matriz = n-1;
+		var conta_Matriz = 1;
+		var matriz = new Array(n);
+		for(var i=0; i<n; i++)
+		{
+		   matriz[i] = new Array(n);
+		}
+
+		for(i=0; i<n; i++)
+		{
+		   for(var j=0; j<n; j++)
+		   {
+			   matriz[i][j] = 0;
+		   }
+		}
+
+		while(conta_Matriz <= (Math.pow(n,2))) {
+			for(i=auxiliar; i<=dimen_Matriz; i++) {
+				matriz[auxiliar][i] = conta_Matriz + " ";
+				conta_Matriz++;
+			}
+
+			for(i=auxiliar+1; i<=dimen_Matriz; i++) {
+				matriz[i][dimen_Matriz]=conta_Matriz + " ";
+				conta_Matriz++;
+			}
+
+			for(i=dimen_Matriz-1; i>=auxiliar; i--) {
+				matriz[dimen_Matriz][i] = conta_Matriz + " ";
+				conta_Matriz++;
+			}
+
+			for(i=dimen_Matriz-1; i>=auxiliar+1; i--) {
+				matriz[i][auxiliar] = conta_Matriz + " ";
+				conta_Matriz++;
+			}
+			auxiliar +=1;
+			dimen_Matriz -= 1;
+		}
+
+		
+		for(i=0; i<n; i++) {
+			matriz[i][j] = "<br><br>";	
+		}
+
+		document.write(matriz);
+	</script>	
+</div>
+
+</body>
+</html>

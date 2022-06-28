@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formulario</title>
+</head>
+
+<body>
+<div class="contenido">
+	<div class="cont-form">
+		<form id="form1" name="form1" method="post" action="php/guardar.php">
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" id="idnombre"><br>
+			
+			<label for="apellido">Apellido</label>
+			<input type="text" name="apellido" id="idapellido"><br>
+			
+			<label for="cedula">Cédula</label>
+			<input type="text" name="cedula" id="idcedula"><br>
+			
+			<label for="fechan">Fecha de nacimiento</label>
+			<input type="date" name="fechan" id="idfnacimiento"><br>
+			
+			<label for="genero">Género</label>
+			<select name="genero">
+				<option value="Masculino" selected>Masculino</option>
+				<option value="Femenino">Femenino</option>
+			</select><br>
+			
+			<label for="estC">Estado civil</label>
+			<select name="estC">
+				<option value="Soltero/a" selected>Soltero/a</option>
+				<option value="Casado/a">Casado/a</option>
+				<option value="Divorciado/a">Divorciado/a</option>
+				<option value="Viudo/a">Viudo/a</option>
+				<option value="Union Libre">Union Libre</option>
+			</select><br>
+			
+			<label for="direccion">Dirección</label>
+			<input type="text" name="direccion" id="iddireccion"><br>
+			
+			<label for="telef">Teléfono</label>
+			<input type="text" name="telef" id="idtelef"><br>
+			
+			<div class="botones">
+				<button type="submit" name="enviar" id="enviar">Enviar</button>
+				<a href="php/imprimir.php"><button type="button" name="imprimir" id="imprimir">Imprimir</button></a>
+				<a href="php/index.php"><button type="button" name="cancelar" id="cancelar">Cancelar</button></a>
+			</div>
+		</form>
+	</div>	
+</div>
+</body>
+</html>

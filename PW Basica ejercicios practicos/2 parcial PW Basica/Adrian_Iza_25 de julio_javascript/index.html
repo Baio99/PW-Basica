@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+ 
+<html>
+<head>
+<title> Tablas de multiplicar </title>
+<link href="css/estilo js.css" rel="stylesheet" type="text/css">
+    </head>
+ 
+    <body bgcolor= " #4682b4">
+		
+		<h1> TABLAS DE MULTIPLICAR </h1>
+		
+<script>
+		var num_tabla = window.prompt("Numero de tablas: ");
+		var num_limiteTab = window.prompt("Hasta que numero desea multiplicar?");
+		document.write("Numero de tablas: ",num_tabla,"<br>");
+		document.write("Hasta que numero desea multiplicar: ",num_limiteTab,"<br><br>");
+		document.write("<div class='grid-container'>")
+	
+	
+	
+		for(let i=1; i<=num_tabla; i++){
+			document.write("<div class='grid-item'> Tabla del ",i, ": ", "<br>" );
+			for(let j=1; j<=num_limiteTab; j++){
+				document.write(i," x ",j," = ",i*j, "<br>");
+			}
+			document.write("</div>");
+		}
+		document.write("</div>");
+		
+	</script>
+		
+    </body>
+</html>

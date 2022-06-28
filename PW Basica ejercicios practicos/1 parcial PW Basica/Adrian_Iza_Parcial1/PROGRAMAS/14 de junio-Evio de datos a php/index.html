@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formulario</title>
+</head>
+
+<body>
+	<form id="form1"  name="form1" method="POST" action="Envio_datos.php">
+	  <p>
+	    <label for="nombre">Nombres:</label>
+	    <input type="text" name="nombre" id="idnombre">
+      </p>
+	  <p>
+	    <label for="apellido">Apellidos:</label>
+        <input type="text" name="apellido" id="idapellido">
+	  </p>
+	  <p>
+	    <label for="email">E-mail:</label>
+        <input type="text" name="email" id="idemail">
+	  </p>
+	  <p>
+	    <label for="telefono">Telf:</label>
+        <input type="text" name="telefono" id="idtelefono">
+	  </p>
+	  <p>Genero</p>
+	  <p>
+	    <label>
+	      <input type="radio" name="RadioGroup1" value="m" id="RadioGroup1_0">
+	      Maculino</label>
+	    <br>
+	    <label>
+	      <input type="radio" name="RadioGroup1" value="f" id="RadioGroup1_1">
+	      Femenino</label>
+      </p>
+	 <p>
+        <label for="estado_civil">Estado Civil:</label>
+        <select name="estado_civil" id="id_estado_civil">
+          <option value="cas">Casado</option>
+          <option value="sol">Soltero</option>
+          <option value="div">Divorciado</option>
+          <option value="viu">Viudo</option>
+        </select>
+      </p>
+	  <p>
+	    <input type="submit" name="submit" id="submit" value="Enviar">
+	    <br>
+      </p>
+	</form>
+</body>
+</html>

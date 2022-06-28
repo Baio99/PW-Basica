@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+h1{
+	text-align: center;
+}
+
+img{
+	 width: 100%;
+	background-repeat: no-repeat;
+}
+body{
+	background-repeat: no-repeat;
+	width: 100%;
+	background-size: cover;
+	 margin: 0;
+      height: 100vh;
+}
+
+.button5   {
+	background-color: #008CBA;
+}
+
+.button1{
+	background-color: #008CBA;
+}
+.button3 {
+	background-color: #008CBA;
+}
+.button4{
+	background-color: #008CBA;
+	
+}
+.button2{
+	background-color: #008CBA;
+	
+}
+.button6{
+	background-color: #008CBA;
+	
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3 Agosto</title>
+<link href="css/style.css"       rel="stylesheet" type="text/css">
+
+</head><body background="img/pngtree-hand-drawn-education-math-background-image_337861.jpg " >
+<h1 id="titulo3d">&nbsp; </h1>
+<h1>&nbsp;</h1>
+
+<h1>SELECCIONE UNA OPCION </h1>
+
+	<label for="factorial">Para mostrar el factorial de un numero  <span>de doble click en el boton</span></label>
+<input type="button" class="button1"  value="Factorial" ondblclick="factorial()"/><br>
+	
+	
+	
+	<label for="arrayManual">Para ingresar un array manualmente <span>de doble click en el boton</span></label>
+<input type="button" class="button2"  value="Array Manual" onclick="arrayManual()" /><br>
+	
+	<label for="arrayManual">Para ingresar un array automatico <span>El ratón "sale" del elemento </span></label>
+<input type="button"  class="button3"  value="Array Automatico" onMouseOut="ingresarArrayAuto()"><br>
+	
+	<label for="arreglarArray">Para arreglar un array <span>presione una tecla </span></label>
+<input type="button" class="button4"  value="Arreglar Array" onKeyPress="arreglarArray()" ><br>
+	
+	<label for="matrizForm1">Para crear una Matriz de la Forma 1 <span> Soltar el botón que estaba pulsado en el ratón</span></label>
+<input type="button" class="button5"  value="Matriz Form1" onmouseup="crear_MatrizF1()"><br>
+	
+	<label for="matrizForm2">Para crear una Matriz de la Forma 2 <span>pulsar sin soltar un boton del mause</span> </label>
+<input type="button"  class="button6"  value="Matriz Form2" onMouseOver="crear_MatrizF2()"><br>
+	
+<script>
+	
+	//declaracion funcio factorial
+	function factorial()
+		{
+			var n = window.prompt("Ingrese el numero");
+			var fact=1;
+			for(let i = n; i>0; i--){
+				fact *= i;
+			 }
+			window.alert("El factorial de "+"("+n+"!"+") "+"es: "+""+fact);
+			
+			return 0;
+		}	
+	
+</script>
+<script>
+	function arrayManual(){
+			
+			array = new Array(n);
+			var n=window.prompt("Introduce el tamño del  array");
+			for ( let i=0; i<n;i++)
+				{
+					var num= window.prompt("Ingrese el numero para la el array"+"["+i+"]");
+					array[i]=num;
+				}
+			alert(array);
+			return 0;
+		}
+
+</script>
+<script>
+	//Funcion Array AUTOMATICO
+		function ingresarArrayAuto(){
+			var n=window.prompt("Introduce el tamño del  array");
+			array = new Array(n);
+			for ( let i=0; i<n;i++)
+				{
+					array[i]= Math.floor(Math.random()*20);
+				}
+			alert(array);
+			return array;
+		}
+</script>
+<script>
+	//Funcion Arreglar Array
+	function arreglarArray(){
+			var n=Math.floor(Math.random()*20);
+			array = new Array(n);
+			for ( let i=0; i<n;i++)
+				{
+					array[i]= Math.floor(Math.random()*200);
+				}
+			alert("El array es  :"+ array);
+			alert("El array ordenado es: "+ array.sort());
+			return 0;
+		}
+</script>
+<script>
+	// Funcion mATRIZ FORMA 2
+		
+		function crear_MatrizF2(){
+		var n = parseInt(window.prompt("Ingrese el tamaño de la matriz:"));
+		var matriz = Array(n).fill(null).map(() => Array(n).fill(0));
+		let valor = "";
+		let y;
+		for(let i=0; i<n; i++){
+		for(let j=i; j<n-i; j++){
+			y=j;
+			matriz[j][i]=i+1;
+		}
+		}
+
+		for(let i=y+1,l=1;i<n;i++,l++){
+		for(let j=n-i-1;j<i+1;j++){
+		   matriz[j][i]=n-i;
+		}
+		}
+		imprimirMatriz(matriz,n);
+			return 0;
+		}
+	</script>
+<script>
+		// Funcion mATRIZ FORMA 1
+		function crear_MatrizF1(){
+		var n = parseInt(window.prompt("Ingrese el tamaño de la matriz:"));
+		var matriz = Array(n).fill(null).map(() => Array(n).fill(0));
+		let valor = "";
+		for(let i=0, l=n-1; i<n; i++, l--){
+		for(let j=0, k=n-1; j<n; j++, k--){
+			if((i >= j) && j<=(n-1)/2 && i<=(n-1)/2){
+				matriz[i][j] = ((n+1)/2)-j;
+			}
+
+			if((j+1 >= n-i) && j>=(n-1)/2 && i<=(n-1)/2){
+				matriz[i][j] = ((n+1)/2)-k;
+			}
+
+			if((i >= j) && j>=(n-1)/2 && i>=(n-1)/2){
+				matriz[j][i] = ((n+1)/2)-l;
+			}
+
+			if((j+1 <= n-i) && j>=(n-1)/2 && i<=(n-1)/2){
+				matriz[j][i] = ((n+1)/2)-i;
+			}
+
+			if(i == j || (j+1 == n-i)){
+				matriz[i][j] = 1;
+			}
+			}
+		}
+		imprimirMatriz(matriz,n);
+			return 0;
+		}
+	
+	</script>
+<script>
+	//fUNCION IMPRIMIR
+		function imprimirMatriz(matriz,n){
+		let valor = "";
+		for(let i=0; i<n; i++){
+		for(let j=0; j<n; j++){
+			valor += matriz[i][j] + " ";
+		}
+		valor += "\n";
+		}
+		alert(valor);
+		}
+	</script>
+
+</html>

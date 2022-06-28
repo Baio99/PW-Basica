@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+	
+	<script>
+		do{	
+    var resp=parseInt(window.prompt("Menu\n1.-Factorial\n2.-Ingreso datos arreglo\n3.-Operaciones con arreglos\n4.-Salir\nEscoja Opcion"));
+    
+
+    switch (resp) {
+      case 1:
+        var n=window.prompt('Ingrese un numero para calcular el factorial');
+        var f=factorial(n);
+        window.alert("el factorial de " + n + " es: "+ f);	
+        break;
+
+      case 2:
+		do{
+			opcion=parseInt(window.prompt("Menu\n1.-ingreso manual\n2.-Ingreso aleatorio\n3.-Menu principal\nEscoja Opcion"));
+			switch(opcion){
+				case 1:
+					var nume= new Array();
+					var cantidad = new Array();
+					nume=ingresoNum(nume);
+					window.alert("El arreglo que ingreso es: "+""+nume.toString());
+					nume.sort();
+					window.alert("El arreglo ordenado es: "+""+nume.toString());
+					break;
+				case 2:
+					var nume1=new Array();
+					nume1=aleatorioNum(nume1);
+					window.alert("El arreglo aleatorio es: "+""+nume1.toString());
+					nume1.sort();
+					window.alert("El arreglo ordenado es: "+""+nume1.toString());
+					break;
+			}
+		} while (resp < 2);
+        break;
+
+      case 3:
+		do{
+			opcion=parseInt(window.prompt("Menu\n1.-Creacion de una matriz n*n ordenado automático FORMATO 1\n2.-Creacion de una matriz n*n ordenado automático FORMATO 2\n3.-Menu principal\nEscoja Opcion"));
+			switch(opcion){
+				case 1:
+					var tam=Number(prompt("Ingrese el tamaño que desea de la matriz: "));
+					var llenadoMatriz = matriz_ll_a(tam);
+					window.alert(llenadoMatriz.join('\n'));
+					break;
+				case 2:
+					var tamaño=Number(prompt("Ingrese el tamaño que desea de la matriz: "));
+					var llenadoMatriz = matriz_ll_f(tamaño);
+					window.alert(llenadoMatriz.join('\n'));
+					break;
+		
+			}
+		} while (resp < 2);
+        break;
+
+    case 4:
+        window.alert("SALIO DEL MENU");
+        break;
+
+    default:
+        window.alert("opcion invalida");
+        break;
+       }
+
+} while (resp <4);
+
+
+function factorial(n)
+{
+    var fact=1;
+        for(let i = n; i>0; i--){
+            fact *= i;
+         }
+    return fact;	
+        
+}
+
+
+function ingresoNum(num1){
+     var nume = parseInt(window.prompt("Digite el numero del tamaño del arreglo: "));
+     for(var i=0;i<nume;i++){
+     num = parseInt(window.prompt((i+1)+". Ingrese el numero: "));
+     num1.push(num);
+     }
+     return num1;
+}
+
+function aleatorioNum(num1){
+    var nume = parseInt(window.prompt("Digite el numero del tamaño del arreglo: "));
+    for(var i=0;i<nume;i++){
+        num1.push(Math.floor(Math.random()*(100-9))+0);
+    }
+    return num1;
+}
+
+
+function matriz_ll_a(tam){
+	var arr = new Array(tam);
+
+	for(var i = 0;i < tam;i++){
+		arr[i] = new Array(tam);
+		for(var j = 0;j < tam;j++){
+			if(i==j)
+				{
+					arr[i][j] = 1;
+				}
+			else if(i == (tam-1) - j)
+				{
+					arr[i][j] = 1;
+				}
+			else{
+				arr[i][j] = 0;
+			}
+			
+		}
+	}
+
+	let cont = 0;
+	for(i = 1;i < tam-1;i++){
+		cont = parseInt(tam/2);
+		for(j = 0;j < i;j++){
+			if(arr[i][j]==0){
+			arr[i][j]=tam-cont;
+			cont++;	
+			}
+			if(arr[i][j]==1)
+			{
+				break;	
+			}
+		}
+	}
+	
+	for(i = 1;i < tam-1;i++){
+		cont = parseInt(tam/2);
+		for(j = tam-1;j > parseInt(tam/2);j--){
+			if(arr[i][j]==0){
+				arr[i][j]=tam-cont;
+				cont++;	
+			}
+			if(arr[i][j]==1)
+			{
+				break;	
+			}
+		}
+	}
+	return arr;
+}
+
+function matriz_ll_f(tam){
+	var arr = new Array(tam);
+	var cont = 1;
+	var aux =parseInt(tam/2);
+
+	for(var i = 0;i < tam;i++){
+		arr[i] = new Array(tam);
+		for(var j = 0;j < tam;j++){
+			if(i==j){
+				arr[i][j] = cont;
+			}
+			else if(i == (tam-1) - j){
+				arr[i][j] = cont;
+			}
+			else{
+				arr[i][j] = 0;
+			}
+		}
+		if(i<aux){
+			cont++;
+		}
+		else{
+			cont--;
+		}	
+	}
+	
+	for(i = 1;i < tam-1;i++){
+		cont = 1;
+		for(j = 0;j < i;j++){
+			if(arr[i][j]==0){
+				arr[i][j]=cont;
+				cont++;	
+			}
+			else{
+				break;	
+			}
+		}
+	}
+
+	for(i = 1;i < tam-1;i++){
+		cont = 1;
+		for(j = tam-1;j > parseInt(tam/2);j--){
+			if(arr[i][j]==0){
+				arr[i][j]=cont;
+				cont++;	
+			}
+			else{
+				break;
+			}
+		}
+	}
+	return arr;
+}
+	</script>
+	
+	
+</body>
+</html>

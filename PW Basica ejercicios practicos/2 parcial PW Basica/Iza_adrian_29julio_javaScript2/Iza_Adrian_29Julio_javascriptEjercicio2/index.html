@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+</head>
+  
+<body style="text-align: center;">
+  
+    <script>
+		var opcion = parseInt (prompt ("Menu Principal\n"+"Escoja una opcion:\n"+"1.-Ingresar un Numero y Calcular su factorial\n"+"2.-Ingresar dos numero y calcular la potencia\n"+"3.-Ingresar un numero y calcular el area del circulo\n"+"4.Salir"));
+		
+		switch(opcion){
+
+case 1:
+
+var numero = parseInt(prompt("Ingrese su numero: ")); 
+
+var total=1;
+
+for(var i = 1; i <= numero; i++){
+
+total = total * i;
+	
+}
+
+document.write("<div class='caja'><p>El Numero que usted eligio es: "+numero+"</p>"); 
+	document.write("<p>Su Factorial es: "+total+"</p></div>");
+
+break;
+				
+case 2:
+var numero1= parseInt (prompt("Ingrese un numero: ")); 
+var numero2= parseInt(prompt("Ingrese una Potencia: "));
+var resultado = 1;
+
+for(var i=0; i< numero2;i++){
+
+resultado = resultado * numero1;
+
+} 
+document.write("<div class='caja'><p>Su Numero es: "+numero1+"</p>"); 
+				document.write("<p>Su Potencia es: "+numero2+"</p>");
+				document.write("<p>Su Total es: "+resultado+"</p></div>");
+break;
+
+case 3:
+var pi= Math.PI;
+var radio = parseFloat(prompt("Ingrese radio: "));
+var area = pi * Math.pow(radio, 2);
+
+document.write("<div class='caja'><p>El Radio es: "+radio+"</p>");
+document.write("<p>Su Total del Area es: "+area+"</p>"); 
+				
+				break;
+		}
+		
+	Default:
+Break;
+	</script>
+
+</body>
+  
+</html>
